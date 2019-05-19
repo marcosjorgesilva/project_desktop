@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BibliotecaComum.pedido
 {
-    class PedidoInterface
+    public interface PedidoInterface
     {
+        void Create(Pedido pedido);
+        void Remove(Pedido pedido);
+        void Update(Pedido pedido);
+        List <Pedido> Select(Pedido filtro);
     }
 }

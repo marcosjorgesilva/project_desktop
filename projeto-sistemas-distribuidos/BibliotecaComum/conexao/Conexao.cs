@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.SqlClient;
 
 namespace BibliotecaComum.conexao
 {
@@ -12,8 +7,8 @@ namespace BibliotecaComum.conexao
         #region declaração de variáveis
         private const string local = "localhost";
         private const string bancoDeDados = "MELOCHICOUT";
-        private const string usuario = "melochicout";
-        private const string senha = "123";
+        private const string usuario = "dbomarcos";
+        private const string senha = "#marcos";
         // constante local deve ser alterada para a instância local do banco(cada máquina tem a sua)
         #endregion
 

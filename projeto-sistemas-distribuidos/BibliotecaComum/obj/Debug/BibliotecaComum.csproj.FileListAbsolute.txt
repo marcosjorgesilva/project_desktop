@@ -1,0 +1,6 @@
+C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.csprojAssemblyReference.cache
+C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.csproj.CoreCompileInputs.cache
+C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\bin\Debug\BibliotecaComum.dll
+C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\bin\Debug\BibliotecaComum.pdb
+C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.dll
+C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.pdb

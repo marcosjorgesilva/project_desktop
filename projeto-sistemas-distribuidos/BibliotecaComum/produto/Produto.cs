@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaComum.produto
 {
-    class Produto
+    public class Produto
     {
         private int idProduto;
         private Categoria categoria;

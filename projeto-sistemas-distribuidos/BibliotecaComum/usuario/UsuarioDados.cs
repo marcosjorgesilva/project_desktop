@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BibliotecaComum.conexao;
+using BibliotecaComum.endereco;
 
 namespace BibliotecaComum.usuario
 {
     class UsuarioDados : Conexao, UsuarioInterface
     {
-        public void Create(Usuario usuario) // 75%, falta endereço
+        public void CreateUsuario(Usuario usuario) // 75%, falta endereço
         {
             // lógica que acessa a base de dados e realiza instrução INSERT
             this.abrirConexao();
@@ -47,37 +44,39 @@ namespace BibliotecaComum.usuario
             // liberação de memória alocada para o objeto SqlCommand
             cmd.Dispose();
 
+            // lógica que executa a inserção do endereço desse cliente
+            /*
+             * 1 - checar se existe endereco 
+             * 2 - enviar endereço que vem no parametro de usuário para a classe responsável pelo cadastro
+             */
+
+            foreach (Endereco end in usuario.Enderecos)
+                new EnderecoNegocio().CreateEndereco(end);
+
             // fechamento de conexão com base de dados
             this.fecharConexao();
         }
 
-        public void Remove(Usuario usuario) // 100%
+        public void RemoveUsuario(Usuario usuario) // 100%
         {
             // lógica que acessa a base de dados e realiza instrução DELETE baseado no CPF do usuário
-            try
-            {
-                this.abrirConexao();
-                #region query SQL
-                string sqlQuery = "DELETE FROM usuario WHERE cpf = @cpf ";
+            this.abrirConexao();
+            #region query SQL
+            string sqlQuery = "DELETE FROM usuario WHERE cpf = @cpf ";
 
-                SqlCommand cmd = new SqlCommand(sqlQuery, this.sqlConnection);
+            SqlCommand cmd = new SqlCommand(sqlQuery, this.sqlConnection);
 
-                cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
-                cmd.Parameters["@cpf"].Value = usuario.Cpf;
+            cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
+            cmd.Parameters["@cpf"].Value = usuario.Cpf;
 
-                cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
 
-                cmd.Dispose();
-                #endregion
-                this.fecharConexao();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            cmd.Dispose();
+            #endregion
+            this.fecharConexao();
         }
 
-        public void Update(Usuario usuario) // 50% falta definir o que pode ser editado e endreço
+        public void UpdateUsuario(Usuario usuario) // 50% falta definir o que pode ser editado e endreço
         {
             // lógica que acessa a base de dados e realiza instrução UPDATE
             // os campos atualizados podem ser senha, email, endereço, telefones
@@ -87,26 +86,26 @@ namespace BibliotecaComum.usuario
             string sqlQuery = "UPDATE usuario ";
             sqlQuery += "SET senha = @senha ";
 
-            if (String.IsNullOrEmpty(usuario.Email))
+            if (string.IsNullOrEmpty(usuario.Email))
                 sqlQuery += ", email = @email ";
 
-            if (String.IsNullOrEmpty(usuario.TelefoneFixo))
+            if (string.IsNullOrEmpty(usuario.TelefoneFixo))
                 sqlQuery += ", tel_fixo = @tel_fixo ";
 
-            if (String.IsNullOrEmpty(usuario.TelefoneCelular))
+            if (string.IsNullOrEmpty(usuario.TelefoneCelular))
                 sqlQuery += ", tel_celular = @tel_celular ";
 
             sqlQuery += "WHERE cpf = @cpf ";
 
             SqlCommand cmd = new SqlCommand(sqlQuery, this.sqlConnection);
 
-            if (String.IsNullOrEmpty(usuario.TelefoneCelular) == false)
+            if (string.IsNullOrEmpty(usuario.TelefoneCelular) == false)
                 setTelefoneCelularInUsuario(usuario, cmd);
 
-            if (String.IsNullOrEmpty(usuario.TelefoneFixo) == false)
+            if (string.IsNullOrEmpty(usuario.TelefoneFixo) == false)
                 setTelefoneFixoInUsuario(usuario, cmd);
 
-            if (String.IsNullOrEmpty(usuario.Email) == false)
+            if (string.IsNullOrEmpty(usuario.Email) == false)
                 setEmailInSqlQuery(usuario, cmd);
 
             setSenhaInSqlQuery(usuario, cmd);
@@ -119,7 +118,7 @@ namespace BibliotecaComum.usuario
             this.fecharConexao();
         }
 
-        public List<Usuario> Detail(Usuario filtro) // 75% falta definir o que será exibido
+        public List<Usuario> DetailUsuario(Usuario filtro) // 75% falta definir o que será exibido
         {
             // lógica que acessa a base de dados e realiza instrução SELECT
             this.abrirConexao();
@@ -129,50 +128,50 @@ namespace BibliotecaComum.usuario
 
             // caso haja parâmetros como filtro para a busca, são adicionados na query
             #region atribuição de filtros na query
-            if (String.IsNullOrEmpty(filtro.NomeUsuario) == false)
+            if (string.IsNullOrEmpty(filtro.NomeUsuario) == false)
                 sqlQuery += "AND nome = @nome ";
 
-            if (String.IsNullOrEmpty(filtro.Cpf) == false)
+            if (string.IsNullOrEmpty(filtro.Cpf) == false)
                 sqlQuery = "AND cpf = @cpf ";
 
-            if (String.IsNullOrEmpty(filtro.Email) == false)
+            if (string.IsNullOrEmpty(filtro.Email) == false)
                 sqlQuery += "AND email = @email ";
 
-            if (String.IsNullOrEmpty(filtro.DataNascimento) == false)
+            if (string.IsNullOrEmpty(filtro.DataNascimento.ToString("dd-MM-yyyy")) == false)
                 sqlQuery += "AND data_nascimento = @data_nascimento ";
 
-            if (String.IsNullOrEmpty(filtro.Login) == false)
+            if (string.IsNullOrEmpty(filtro.Login) == false)
                 sqlQuery += "AND login = @login ";
 
-            if (String.IsNullOrEmpty(filtro.TelefoneCelular) == false)
+            if (string.IsNullOrEmpty(filtro.TelefoneCelular) == false)
                 sqlQuery += "AND tel_celular = @tel_celular ";
 
-            if (String.IsNullOrEmpty(filtro.TelefoneFixo) == false)
+            if (string.IsNullOrEmpty(filtro.TelefoneFixo) == false)
                 sqlQuery += "AND tel_fixo = @tel_fixo ";
             #endregion
 
             SqlCommand cmd = new SqlCommand(sqlQuery, this.sqlConnection);
 
             #region atribuindo valores aos filtros da query
-            if (String.IsNullOrEmpty(filtro.NomeUsuario) == false)
+            if (string.IsNullOrEmpty(filtro.NomeUsuario) == false)
                 setNomeInSqlQuery(filtro, cmd);
 
-            if (String.IsNullOrEmpty(filtro.Cpf) == false)
+            if (string.IsNullOrEmpty(filtro.Cpf) == false)
                 setCpfInSqlQuery(filtro, cmd);
 
-            if (String.IsNullOrEmpty(filtro.Email) == false)
+            if (string.IsNullOrEmpty(filtro.Email) == false)
                 setEmailInSqlQuery(filtro, cmd);
 
-            if (String.IsNullOrEmpty(filtro.DataNascimento) == false)
+            if (string.IsNullOrEmpty(filtro.DataNascimento.ToString("dd-MM-yyyy")) == false)
                 setDataNascimentoInSqlQuery(filtro, cmd);
 
-            if (String.IsNullOrEmpty(filtro.Login) == false)
+            if (string.IsNullOrEmpty(filtro.Login) == false)
                 setLoginInSqlQuery(filtro, cmd);
 
-            if (String.IsNullOrEmpty(filtro.TelefoneCelular) == false)
+            if (string.IsNullOrEmpty(filtro.TelefoneCelular) == false)
                 setTelefoneCelularInUsuario(filtro, cmd);
 
-            if (String.IsNullOrEmpty(filtro.TelefoneFixo) == false)
+            if (string.IsNullOrEmpty(filtro.TelefoneFixo) == false)
                 setTelefoneFixoInUsuario(filtro, cmd);
             #endregion
 
@@ -186,7 +185,7 @@ namespace BibliotecaComum.usuario
                 Usuario usuario = new Usuario();
                 usuario.NomeUsuario = dataReader.GetString(dataReader.GetOrdinal("nome"));
                 usuario.Cpf = dataReader.GetString(dataReader.GetOrdinal("cpf"));
-                usuario.DataNascimento = dataReader.GetDataTypeName(dataReader.GetOrdinal("data_nascimento"));
+                usuario.DataNascimento = dataReader.GetDateTime(dataReader.GetOrdinal("data_nascimento"));
                 usuario.Email = dataReader.GetString(dataReader.GetOrdinal("email"));
                 usuario.Login = dataReader.GetString(dataReader.GetOrdinal("login"));
                 usuario.TelefoneCelular = dataReader.GetString(dataReader.GetOrdinal("tel_celular"));

@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="obj\Debug\netcoreapp2.0\InterfaceVisual.AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp2.0\InterfaceVisual.deps.json" />
+    <Content Include="bin\Debug\netcoreapp2.0\InterfaceVisual.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\netcoreapp2.0\InterfaceVisual.runtimeconfig.json" />
+    <Content Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\netcoreapp2.0\project.razor.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp2.0\InterfaceVisual.dll" />
+    <None Include="bin\Debug\netcoreapp2.0\InterfaceVisual.pdb" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.assets.cache" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csprojAssemblyReference.cache" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.dll" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.pdb" />
+    <None Include="obj\InterfaceVisual.csproj.nuget.cache" />
+    <None Include="obj\InterfaceVisual.csproj.nuget.g.props" />
+    <None Include="obj\InterfaceVisual.csproj.nuget.g.targets" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaComum\BibliotecaComum.csproj" />
+  </ItemGroup>
+
+</Project>

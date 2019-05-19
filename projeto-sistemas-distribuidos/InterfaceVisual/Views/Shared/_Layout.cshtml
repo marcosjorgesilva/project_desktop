@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Panel</title>
+    <!-- Diga ao navegador para responder à largura da tela -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="~/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="~/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+    <!-- Morris chart -->
+    <link rel="stylesheet" href="bower_components/morris.js/morris.css">
+    <!-- Fonte Awesome -->
+    <link rel="stylesheet" href="~/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Estilo do tema -->
+    <link rel="stylesheet" href="~/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="~/dist/css/skins/skin-blue.min.css">
+    <!-- Google Font -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <!-- Cabeçalho principal -->
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="index2.html" class="logo">
+                <!-- mini logotipo para sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>G</b>T</span>
+                <!-- logotipo para estado regular e dispositivos móveis -->
+                <span class="logo-lg"><b>Good</b>Trip</span>
+            </a>
+            <!-- Cabeçalho Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Botão de alternância da barra lateral-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Menu direito da barra de navegação -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu da conta de usuário -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- A imagem do usuário na barra de navegação -->
+                                <img src="~/dist/img/user9-160x160.jpg" class="user-image" alt="User Image">
+                                <!-- hidden-xs oculta o nome de usuário em dispositivos pequenos, portanto, apenas a imagem aparece. -->
+                                <span class="hidden-xs">Marcos Jorge</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- A imagem do usuário no menu -->
+                                <li class="user-header">
+                                    <img src="~/dist/img/user9-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        Marcos Jorge - Coding Infinite
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Corpo do Menu -->
+                                <li class="user-body">
+                                    <div class="row">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Account</a>
+                                        </div>
+                                    </div>
+                                    <!-- /.row -->
+                                </li>
+                                <!-- Rodapé do Menu -->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Coluna do lado esquerdo. contém o logotipo e a barra lateral -->
+        <aside class="main-sidebar">
+            <!-- barra lateral: o estilo pode ser encontrado em sidebar.less -->
+            <section class="sidebar">
+                <!-- Painel do usuário da barra lateral (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/dist/img/user9-160x160.jpg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        <p>Marcos Jorge</p>
+                    </div>
+                </div>
+                <!-- Formulário de pesquisa (Optional) -->
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <!-- /.Formulário de pesquisa -->
+                <!-- Barra Lateral Menu -->
+                @Html.Partial("_MainMenu")
+                <!-- /.Barra Lateral-menu -->
+            </section>
+            <!-- /.Barra Lateral -->
+        </aside>
+        <!-- Conteúdo Wrapper. Contém o conteúdo da página -->
+        <div class="content-wrapper">
+            <!-- Cabeçalho de Conteúdo (cabeçalho da página) -->
+            @RenderBody()
+            <!-- /.Conteúdo -->
+        </div>
+        <!-- /.envoltório de conteúdo -->
+        <!-- Rodapé principal -->
+        <footer class="main-footer">
+            <!-- Padrão à esquerda -->
+            <strong>Copyright &copy; 2018 <a href="https://codinginfinite.com">CodingInfinite</a>.</strong> All rights reserved.
+        </footer>
+    </div>
+<!-- ./wrapper -->
+<!-- REQUIRED JS SCRIPTS -->
+<!-- jQuery 3 -->
+<script src="~/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="~/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/dist/js/adminlte.min.js"></script>
+</body>
+</html>

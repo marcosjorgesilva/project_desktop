@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BibliotecaComum.conexao;
 
 namespace BibliotecaComum.endereco
 {
     public class EnderecoDados : Conexao, EnderecoInterface
     {
-        public void Create(Endereco endereco)
+        public void CreateEndereco(Endereco endereco)  // logradouro, numero, bairro, cep, complemento, referencia
         {
             this.abrirConexao();
-            string sqlQuery = "INSERT INTO endereco (idEndereco, usuario, logradouro, numero ,bairro, cep, complemento ,referencia) ";
-            sqlQuery += "VALUES (@idEndereco, @usuario, @logradouro, @numero, @bairro, @cep, @complemento, @referencia)";
-
+            string sqlQuery = "INSERT INTO endereco logradouro, numero, bairro, cep, complemento, referencia) ";
+            sqlQuery += "VALUES (@logradouro, @numero, @bairro, @cep, @complemento, @referencia)";
+            
             SqlCommand cmd = new SqlCommand(sqlQuery, this.sqlConnection);
 
             // execução da query
@@ -27,11 +24,10 @@ namespace BibliotecaComum.endereco
 
             // fechamento de conexão com base de dados
             this.fecharConexao();
-
         }
 
       
-        public void Remove(Endereco endereco)
+        public void RemoveEndereco(Endereco endereco)
         {
             // lógica que acessa a base de dados e realiza instrução DELETE baseado no idEndereco do usuário
             try
@@ -42,7 +38,7 @@ namespace BibliotecaComum.endereco
 
                 SqlCommand cmd = new SqlCommand(sqlQuery, this.sqlConnection);
 
-                cmd.Parameters.Add("@idEnderecof", SqlDbType.VarChar);
+                cmd.Parameters.Add("@idEndereco", SqlDbType.VarChar);
                 cmd.Parameters["@idEndereco"].Value = endereco.IdEndereco;
 
                 cmd.ExecuteNonQuery();
@@ -58,11 +54,11 @@ namespace BibliotecaComum.endereco
             throw new NotImplementedException();
         }
 
-        public void Update(Endereco endereco)
+        public void UpdateEndereco(Endereco endereco)
         {
             this.abrirConexao();
             string sqlQuery = "UPADATE endereco";
-            sqlQuery += "SET logradouro=@logradouro, numero=@numero, bairro=@bairro, cep=@cep, complemento=@complemento, referencia=@referencia ";
+            sqlQuery += "SET logradouro = @logradouro, numero = @numero, bairro = @bairro, cep = @cep, complemento = @complemento, referencia = @referencia ";
 
 
 
@@ -73,7 +69,7 @@ namespace BibliotecaComum.endereco
             throw new NotImplementedException();
         }
 
-        public List<Endereco> Detail(Endereco endereco)
+        public List<Endereco> DetailEndereco(Endereco endereco)
         {
             throw new NotImplementedException();
 

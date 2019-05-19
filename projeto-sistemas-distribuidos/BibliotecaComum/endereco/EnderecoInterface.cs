@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace BibliotecaComum.endereco
 {
     interface EnderecoInterface
     {
-        void Create(Endereco endereco);
-        void Remove(Endereco endereco);
-        void Update(Endereco endereco);
-        List<Endereco> Detail(Endereco endereco);
-
+        void CreateEndereco(Endereco endereco);
+        void RemoveEndereco(Endereco endereco);
+        void UpdateEndereco(Endereco endereco);
+        List<Endereco> DetailEndereco(Endereco filtro);
     }
 }

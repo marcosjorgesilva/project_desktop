@@ -9,7 +9,7 @@ using System.Data;
 
 namespace BibliotecaComum.produto
 {
-    class ProdutoDados : Conexao, ProdutoInterface
+    public class ProdutoDados : Conexao, ProdutoInterface
     {
         string query;
 
@@ -144,26 +144,7 @@ namespace BibliotecaComum.produto
 
         public void update(Produto produto)
         {
-            this.abrirConexao();
-            query = "UPDATE produto SET ID_Categoria = @id_categoria, Nome = @nome, Valor_Produto = @valor_produto = @valor_produto, Estoque = @estoque, Tamanho = @tamanho ";
-            query += "WHERE ID_Produto = @id_produto ";
-            SqlCommand cmd = new SqlCommand(query, this.sqlConnection);
-
-            cmd.Parameters.Add("@id_categoria", SqlDbType.Int);
-            cmd.Parameters["@id_produto"].Value = produto.Categoria;
-            cmd.Parameters.Add("@nome", SqlDbType.VarChar);
-            cmd.Parameters["@nome"].Value = produto.Nome;
-            cmd.Parameters.Add("@valor_produto", SqlDbType.Decimal);
-            cmd.Parameters["@valor_produto"].Value = produto.ValorProduto;
-            cmd.Parameters.Add("@estoque", SqlDbType.Int);
-            cmd.Parameters["@estoque"].Value = produto.Estoque;
-            cmd.Parameters.Add("@tamanho", SqlDbType.Char);
-            cmd.Parameters["@tamanho"].Value = produto.Tamanho;
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-
-            this.fecharConexao();
+            throw new NotImplementedException();
         }
     }
 }

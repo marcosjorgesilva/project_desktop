@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BibliotecaComum.usuario
 {
     public class UsuarioNegocio : UsuarioInterface
     {
-        public void Create(Usuario usuario)
+        public void CreateUsuario(Usuario usuario)
         {
             string[] simbolosNom =  {"!", "@", "#", "$", "%", "&", "*", "(", ")", "-", "+", "=", "'", "/", ".",
                                      ",", "|", "<", ">", ":", ";", "?", "~", "^", "´", "`", "_", "[", "]", "{",
@@ -48,24 +45,24 @@ namespace BibliotecaComum.usuario
             // falta validaçao de data de nascimento e endereço
 
             // chamada ao DAO
-            new UsuarioDados().Create(usuario);
+            new UsuarioDados().CreateUsuario(usuario);
         }
 
-        public void Remove(Usuario usuario)
+        public void RemoveUsuario(Usuario usuario)
         {
             usuario.Cpf = formatCpf(usuario.Cpf);
 
-            new UsuarioDados().Remove(usuario);
+            new UsuarioDados().RemoveUsuario(usuario);
         }
 
-        public void Update(Usuario usuario)
+        public void UpdateUsuario(Usuario usuario)
         {
-            new UsuarioDados().Update(usuario);
+            new UsuarioDados().UpdateUsuario(usuario);
         }
 
-        public List<Usuario> Detail(Usuario filtro)
+        public List<Usuario> DetailUsuario(Usuario filtro)
         {
-            return new UsuarioDados().Detail(filtro);
+            return new UsuarioDados().DetailUsuario(filtro);
         }
 
         #region métodos para uso interno da classe

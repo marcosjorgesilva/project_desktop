@@ -1,30 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BibliotecaComum.usuario;
+﻿using BibliotecaComum.usuario;
 
 namespace BibliotecaComum.endereco
 {
-     public class Endereco
+    public class Endereco
     {
-        private int idEndereco;
-        private Usuario usuario;
-        private String logradouro;
-        private int numero;
-        private String bairro;
-        private String cep;
-        private String complemento;
-        private String referencia;
+        public int IdEndereco { get; set; }
+        public Usuario Usuario { get; set; }
+        public string Logradouro { get; set; }
+        public int Numero { get; set; }
+        public string Bairro { get; set; }
+        public string Cep { get; set; }
+        public string Complemento { get; set; }
+        public string Referencia { get; set; }
 
-        public int IdEndereco { get => idEndereco; set => idEndereco = value; }
-        public Usuario Usuario { get => usuario; set => usuario = value; }
-        public string Logradouro { get => logradouro; set => logradouro = value; }
-        public int Numero { get => numero; set => numero = value; }
-        public string Bairro { get => bairro; set => bairro = value; }
-        public string Cep { get => cep; set => cep = value; }
-        public string Completo { get => complemento; set => complemento = value; }
-        public string Referencia { get => referencia; set => referencia = value; }
+        public Endereco() { }
+
+        public Endereco(Usuario usuario, string logradouro, int numero, string bairro, string cep, string complemento, string referencia)
+        {
+            Usuario = usuario;
+            Logradouro = logradouro;
+            Numero = numero;
+            Bairro = bairro;
+            Cep = cep;
+            Complemento = complemento;
+            Referencia = referencia;
+        }
     }
 }
