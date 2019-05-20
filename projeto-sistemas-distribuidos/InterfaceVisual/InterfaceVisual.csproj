@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <StartupObject>InterfaceVisual.Program</StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>3</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +20,7 @@
     <Content Include="bin\Debug\netcoreapp2.0\InterfaceVisual.runtimeconfig.json" />
     <Content Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\netcoreapp2.0\project.razor.json" />
+    <Content Include="obj\InterfaceVisual.csproj.nuget.dgspec.json" />
     <Content Include="obj\project.assets.json" />
   </ItemGroup>
 
@@ -27,6 +34,7 @@
     <None Include="bin\Debug\netcoreapp2.0\InterfaceVisual.pdb" />
     <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.AssemblyInfoInputs.cache" />
     <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.assets.cache" />
+    <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.CopyComplete" />
     <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.CoreCompileInputs.cache" />
     <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.csprojAssemblyReference.cache" />
     <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.dll" />

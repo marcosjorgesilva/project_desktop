@@ -21,9 +21,6 @@ namespace InterfaceVisual.Controllers
 
         [HttpPost]
         public ActionResult CadastrarProduto(Produto produto){
-            //BibliotecaComum.produto.
-            //BibliotecaComum.produto.ProdutoDados negocio = new BibliotecaComum.produto.ProdutoDados();
-            //negocio.insert(produto); 
             db.Produto.Add(produto);
             db.SaveChanges();
             return RedirectToAction("Index", "Produto");

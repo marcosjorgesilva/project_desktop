@@ -12,8 +12,9 @@ namespace InterfaceVisual
             DashboardViewModel dashboard = new DashboardViewModel();
             
             dashboard.produto_count = db.Produto.Count();
-            //dashboard.nurses_count = db.Admins.Count();
-            //dashboard.patients_count = db.Categoria.Count();
+            dashboard.nurses_count = db.Admins.Count();
+            dashboard.categoria_count = db.Categoria.Count();
+
             return View(dashboard);
         }
     }
