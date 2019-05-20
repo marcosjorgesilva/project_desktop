@@ -26,7 +26,7 @@ namespace InterfaceVisual.Models
                     do código-fonte. Consulte http://go.microsoft.com/fwlink/?LinkId=723263 para obter orientação 
                     sobre como armazenar cadeias de conexão.                
                  */ 
-                optionsBuilder.UseSqlServer("Server=localhost;User Id=dbomarcos;Password=#marcos;Database=MELOCHICOUT");
+                optionsBuilder.UseSqlServer("Server=localhost;User Id=melochicout;Password=melochicout;Database=MELOCHICOUT");
             }
         }
 
@@ -173,7 +173,16 @@ namespace InterfaceVisual.Models
                     .IsRequired()
                     .HasColumnName("tamanho")
                     .HasColumnType("nvarchar(3)");
-        
+
+                entity.Property(e => e.IdCategoria)
+                    .HasColumnName("id_categoria")
+                    .HasColumnType("integer");
+
+                entity.HasOne(d => d.Categoria)
+                    .WithMany(p => p.Produtos)
+                    .HasForeignKey(d => d.IdCategoria)
+                    .HasConstraintName("ForeignKey_Categoria_Produto");
+
             });
             modelBuilder.Entity<Categoria>(entity =>
             {
@@ -187,16 +196,7 @@ namespace InterfaceVisual.Models
                     .IsRequired()
                     .HasColumnName("tipo_categoria")
                     .HasColumnType("varchar(150)");
-
-                entity.Property(e => e.IdProduto)
-                    .HasColumnName("id_produto")
-                    .HasColumnType("integer");
-
-                entity.HasOne(d => d.Produto)
-                    .WithMany(p => p.Categorias)
-                    .HasForeignKey(d => d.IdProduto)
-                    .HasConstraintName("ForeignKey_Categoria_Produto");
-
+                
             });
 
             modelBuilder.Entity<Usuario>(entity =>

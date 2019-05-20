@@ -21,7 +21,7 @@
                 <div class="small-box bg-aqua">
                     <div class="inner">
                         <h3>@Model.produto_count</h3>
-                        <p>produto</p>
+                        <p>Produtos</p>
                     </div>
                     <div class="icon">
                         <i class="fa fa-users"></i>
@@ -29,35 +29,35 @@
                     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            <!-- ./col
+            <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
-                 small box
+                <!--  small box -->
                 <div class="small-box bg-green">
-                <div class="inner">
-                    <h3> Model.nurses_count<sup style="font-size: 20px"></sup></h3>
-                    <p>Nurses</p>
-                </div>
-                <div class="icon">
-                    <i class="fa fa-users"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <div class="inner">
+                        <h3> @Model.nurses_count<sup style="font-size: 20px"></sup></h3>
+                        <p>Nurses</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-             ./col
+            <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
-                 small box
+                <!-- small box -->
                 <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h3> Model.patients_count</h3>
-                    <p>Patients</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                    <div class="inner">
+                        <h3> @Model.categoria_count</h3>
+                        <p>Categorias</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person"></i>
+                    </div>
+                    <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
-            -->
+
             <!-- ./col -->
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
@@ -230,8 +230,8 @@
       colors: ["#3c8dbc", "#f56954", "#00a65a"],
       data: [
         {label: "Registered produto", value: @Model.produto_count}
-        //{label: "Registered Nurses", value:  Model.nurses_count},
-        //{label: "Registered Patients", value:  Model.patients_count}
+        {label: "Registered Nurses", value:  @Model.nurses_count},
+        {label: "Registered Patients", value:  @Model.categoria_count}
       ],
       hideHover: 'auto'
     });

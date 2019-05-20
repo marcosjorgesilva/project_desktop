@@ -4,3 +4,9 @@ C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\Bibliote
 C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\bin\Debug\BibliotecaComum.pdb
 C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.dll
 C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.pdb
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\BibliotecaComum\bin\Debug\BibliotecaComum.dll
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\BibliotecaComum\bin\Debug\BibliotecaComum.pdb
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.csprojAssemblyReference.cache
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.csproj.CoreCompileInputs.cache
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.dll
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\BibliotecaComum\obj\Debug\BibliotecaComum.pdb

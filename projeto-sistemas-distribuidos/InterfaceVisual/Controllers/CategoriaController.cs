@@ -4,19 +4,19 @@ using InterfaceVisual.Models;
 
 namespace InterfaceVisual.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoriaController : Controller
     {
         MyDbContext db = new MyDbContext();
-        public ActionResult Index()
+        public ActionResult Listar()
         {
             return View(db.Categoria.ToList());
         }
-        public ActionResult Create()
+        public ActionResult Cadastrar()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult CreateCategoria(Categoria categoria)
+        public ActionResult CadastrarCategoria(Categoria categoria)
         {
             db.Categoria.Add(categoria);
             db.SaveChanges();
@@ -27,8 +27,8 @@ namespace InterfaceVisual.Controllers
         {
             try
             {
-                Categoria doctor = db.Categoria.Where(s => s.IdCategoria == idCategoria).First();
-                db.Categoria.Remove(doctor);
+                Categoria categoria = db.Categoria.Where(s => s.IdCategoria == idCategoria).First();
+                db.Categoria.Remove(categoria);
                 db.SaveChanges();
                 return true;
             }
@@ -38,12 +38,12 @@ namespace InterfaceVisual.Controllers
             }
 
         }
-        public ActionResult Update(int idCategoria)
+        public ActionResult Atualizar(int idCategoria)
         {
             return View(db.Categoria.Where(s => s.IdCategoria == idCategoria).First());
         }
         [HttpPost]
-        public ActionResult UpdateDoctor(Categoria categoria)
+        public ActionResult AtualizarCategoria(Categoria categoria)
         {
             Categoria d = db.Categoria.Where(s => s.IdCategoria == categoria.IdCategoria).First();
             d.TipoCategoria = categoria.TipoCategoria;

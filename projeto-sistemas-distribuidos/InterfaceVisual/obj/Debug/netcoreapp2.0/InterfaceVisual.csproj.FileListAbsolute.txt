@@ -12,3 +12,17 @@ C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\Interfac
 C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\BibliotecaComum.dll
 C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\BibliotecaComum.pdb
 C:\Projects\projeto-sistemas-distribuidos\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.CopyComplete
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.csprojAssemblyReference.cache
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.CoreCompileInputs.cache
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.AssemblyInfoInputs.cache
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.AssemblyInfo.cs
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.dll
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.pdb
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\InterfaceVisual.deps.json
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\InterfaceVisual.runtimeconfig.json
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\InterfaceVisual.runtimeconfig.dev.json
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\InterfaceVisual.dll
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\InterfaceVisual.pdb
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\BibliotecaComum.dll
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\bin\Debug\netcoreapp2.0\BibliotecaComum.pdb
+C:\project\project_desktop_web-MVC\projeto-sistemas-distribuidos\InterfaceVisual\obj\Debug\netcoreapp2.0\InterfaceVisual.csproj.CopyComplete
