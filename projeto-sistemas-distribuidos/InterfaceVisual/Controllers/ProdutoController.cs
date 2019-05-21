@@ -27,7 +27,7 @@ namespace InterfaceVisual.Controllers
         }
 
         [HttpPost]
-        public bool Delete(Produto produto)
+        public bool Apagar(Produto produto)
         {
             try
             {

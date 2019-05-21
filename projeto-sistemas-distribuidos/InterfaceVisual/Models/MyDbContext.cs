@@ -26,7 +26,7 @@ namespace InterfaceVisual.Models
                     do código-fonte. Consulte http://go.microsoft.com/fwlink/?LinkId=723263 para obter orientação 
                     sobre como armazenar cadeias de conexão.                
                  */ 
-                optionsBuilder.UseSqlServer("Server=localhost;User Id=melochicout;Password=melochicout;Database=MELOCHICOUT");
+                optionsBuilder.UseSqlServer("Server=localhost;User Id=dbomarcos;Password=#marcos;Database=MELOCHICOUT");
             }
         }
 

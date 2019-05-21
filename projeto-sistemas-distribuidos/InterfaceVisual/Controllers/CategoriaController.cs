@@ -23,7 +23,7 @@ namespace InterfaceVisual.Controllers
             return RedirectToAction("Index", "Categoria");
         }
         [HttpPost]
-        public bool Delete(int idCategoria)
+        public bool Apagar(int idCategoria)
         {
             try
             {

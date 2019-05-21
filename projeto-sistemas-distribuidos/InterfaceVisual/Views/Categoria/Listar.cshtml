@@ -1,11 +1,11 @@
-@model IEnumerable<InterfaceVisual.Models.Produto>
+﻿@model IEnumerable<InterfaceVisual.Models.Categoria>
 <section class="content-header">
     <h1>
-        Produto
+        Categoria
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Produto</li>
+        <li class="active">Categorias</li>
     </ol>
 </section>
 <!-- Main content -->
@@ -14,7 +14,7 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Lista de Produtos</h3>
+                    <h3 class="box-title">Lista de Categorias</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -22,24 +22,16 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Tamanho</th>
-                                <th>Estoque</th>
-                                <th>Valor do Produto</th>
-                                <th>Categoria</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Tamanho)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Estoque)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.ValorProduto)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.IdCategoria)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.TipoCategoria)</td>
                                     <td>
-                                        <a href="Produto/Atualizar(@item.IdProduto)">Atualizar</a> 
-                                    |   <a href="" onclick="Apagar(@item.IdProduto)">Apagar</a>
+                                        <a href="Categoria/Atualizar/@item.TipoCategoria')">Atualizar</a> | 
+                                        <a href="" onclick="Apagar('@item.TipoCategoria')">Apagar</a>
                                     </td>
                                 </tr>
                             }
@@ -65,13 +57,13 @@
     function Apagar(id){
         alert(id)
         var txt;
-        var r = confirm("Deseja mesmo apagar este produto?");
+        var r = confirm("Deseja mesmo apagar esta categoria?");
         if (r == true) {
 
             $.ajax(
             {
                 type: "POST",
-                url: '@Url.Action("Apagar", "Produto")',
+                url: '@Url.Action("Apagar", "Categoria")',
                 data: {
                     id: id
                 },
@@ -84,7 +76,7 @@
                         window.location.reload();
                     }
                     else {
-                        alert("N�o foi possivel apagar o registro desejado, tente novamente mais tarde!");
+                        alert("Não foi possivel apagar o registro desejado, tente novamente mais tarde!");
                     }
                 }
             });
