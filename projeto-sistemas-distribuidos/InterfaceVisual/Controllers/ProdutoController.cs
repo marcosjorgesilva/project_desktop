@@ -11,7 +11,6 @@ namespace InterfaceVisual.Controllers
         public ActionResult Listar()
         {
             return View(db.Produto.ToList());
-
         }
 
         public ActionResult Cadastrar()
@@ -20,18 +19,19 @@ namespace InterfaceVisual.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarProduto(Produto produto){
+        public ActionResult CadastrarProduto(Produto produto)
+        {
             db.Produto.Add(produto);
             db.SaveChanges();
             return RedirectToAction("Index", "Produto");
         }
 
         [HttpPost]
-        public bool Apagar(Produto produto)
+        public bool Apagar(int id)
         {
             try
             {
-                db.Produto.Remove(produto);
+                db.Produto.Remove(db.Produto.Where(s => s.IdProduto == id).First());
                 db.SaveChanges();
                 return true;
             }
@@ -42,7 +42,8 @@ namespace InterfaceVisual.Controllers
             
         }
 
-        public ActionResult Atualizar(int id){
+        public ActionResult Atualizar(int id)
+        {
             View(db.Produto.Where(s => s.IdProduto == id).First());
             return RedirectToAction("Index", "Produto");
         }

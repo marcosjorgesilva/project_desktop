@@ -1,7 +1,7 @@
 @model InterfaceVisual.Models.Produto
 
 @{
-    ViewData["CadastrarProduto"] = "Cadastrar Produto";
+    ViewData["CadastrarProduto"] = "Cadastrar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -63,3 +63,11 @@
     </div>
     <!-- /.box -->
 </section>
+
+<div>
+    <a asp-action="Listar">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

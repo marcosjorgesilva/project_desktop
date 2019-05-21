@@ -30,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="bin\Debug\netcoreapp2.0\BibliotecaComum.dll" />
+    <None Include="bin\Debug\netcoreapp2.0\BibliotecaComum.pdb" />
     <None Include="bin\Debug\netcoreapp2.0\InterfaceVisual.dll" />
     <None Include="bin\Debug\netcoreapp2.0\InterfaceVisual.pdb" />
     <None Include="obj\Debug\netcoreapp2.0\InterfaceVisual.AssemblyInfoInputs.cache" />

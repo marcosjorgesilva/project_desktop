@@ -1,4 +1,8 @@
-﻿namespace BibliotecaComum.forma_pagamento
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace BibliotecaComum.forma_pagamento
 {
     public class FormaPagamento
     {
